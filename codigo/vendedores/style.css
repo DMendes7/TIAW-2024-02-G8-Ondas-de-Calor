@@ -1,0 +1,401 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #ffcc00, #ff9900, #ff6600, #ff3300);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(255, 204, 0, 0); /* Ajuste de fundo */
+  padding: 10px 20px; /* Reduz o padding para subir o conteúdo */
+  box-sizing: border-box; /* Inclui padding na largura total */
+  position: fixed; /* Fixa o cabeçalho no topo */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-pequena {
+  height: 40px; /* Tamanho da logo pequena */
+  margin-right: 10px;
+}
+
+/* Estilo dos links no cabeçalho */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right a {
+  margin-left: 10px; /* Reduz o espaçamento entre os links */
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.header-right a:hover {
+  color: #ff3300;
+}
+
+header h1 {
+  font-size: 1.5em;
+  margin: 0;
+  color: #000; /* Cor da fonte preta */
+}
+
+nav a {
+  color: #000;
+  text-decoration: none;
+  margin-left: 10px; /* Reduz o espaçamento entre os links */
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ff3300;
+}
+
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff00;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  flex-grow: 1; /* Permite que o contêiner cresça para ocupar o espaço disponível */
+}
+
+h1 {
+  font-size: 28px;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 30px;
+  text-align: center;
+  color: black;
+}
+
+.retangulo {
+  max-height: 300px; /* Ajuste a altura conforme necessário para exibir 5 itens */
+  overflow-y: auto;
+  width: auto; /* Ajusta a largura ao conteúdo */
+  background-color: #fff; /* Cor de fundo do retângulo */
+  border-radius: 8px;
+  padding: 10px; /* Adiciona padding para espaçamento interno */
+}
+
+table {
+  width: 100%;
+  border-spacing: 0 10px;
+  margin-top: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f54906;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+.logo-footer {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 60px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-left {
+    margin-bottom: 10px;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px 10px;
+  }
+
+  table,
+  th,
+  td {
+    font-size: 14px;
+  }
+}
+
+/* Estilo para a imagem do perfil */
+.profile-image {
+  width: 40px; /* Largura da imagem */
+  height: 40px; /* Altura da imagem */
+  border-radius: 50%; /* Faz a imagem ficar redonda */
+  margin-left: 10px; /* Espaço à esquerda da imagem */
+  cursor: pointer; /* Muda o cursor para indicar que a imagem é clicável */
+}
+
+/* Estilo para a célula de exclusão */
+td.acao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo para a imagem de exclusão */
+.delete-img {
+  width: 35px; /* Ajuste o tamanho conforme necessário */
+  height: 20px; /* Ajuste o tamanho conforme necessário */
+  cursor: pointer; /* Muda o cursor para indicar que a imagem é clicável */
+}
+
+.container-modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro */
+  position: absolute
+}
+
+/* CSS para o contêiner de detalhes */
+.detalhes-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff; /* Cor branca, mantendo o padrão do retângulo */
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  height: 40%;
+  z-index: 1001; /* Coloca o contêiner na frente */
+  overflow: auto; /* Adiciona barra de rolagem quando necessário */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.detalhes-container .left {
+  width: 50%;
+}
+
+#map {
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 40%;
+  float: right;
+}
+
+/* Estilo para o título dos detalhes */
+.detalhes-container h3 {
+  background-color: #f54906; /* Mesmo fundo dos cabeçalhos da tabela */
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Estilo para os parágrafos de detalhes */
+.detalhes-container p {
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9; /* Fundo similar ao padrão das linhas da tabela */
+  border-radius: 4px;
+  color: #333;
+}
+
+/* Estilo do botão para fechar os detalhes */
+#fecharDetalhes {
+  background-color: #f54906; /* Botão com cor similar aos cabeçalhos */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  position: absolute;
+  left: 10px;
+  top: 0;
+}
+
+#fecharDetalhes:hover {
+  background-color: #e03e00; /* Tom levemente mais escuro ao passar o mouse */
+}
+
+/* Ajustes para o contêiner de adicionar comentários */
+#novoComentarioContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 95%; /* Preenche a largura do contêiner */
+  margin-top: 10px;
+}
+
+/* Estilo para o campo de texto do comentário */
+#novoComentario {
+  width: 100%; /* Ocupa toda a largura disponível */
+  height: 80px; /* Ajuste da altura do campo de texto */
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+/* Estilo para os botões de ação */
+.comentario-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Estilo padronizado para todos os botões */
+.botao-comentario {
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Estilo específico para o botão 'Salvar Comentário' */
+#salvarComentario {
+  background-color: #4caf50; /* Cor verde para indicar ação positiva */
+}
+
+#salvarComentario:hover {
+  background-color: #388e3c; /* Cor mais escura ao passar o mouse */
+}
+
+/* Estilo específico para o botão 'Cancelar Comentário' */
+#cancelarComentario {
+  background-color: #f44336; /* Cor vermelha para indicar cancelamento */
+}
+
+#cancelarComentario:hover {
+  background-color: #d32f2f; /* Cor mais escura ao passar o mouse */
+}
+
+/* Estilo adicional para o botão 'Adicionar Comentário' */
+#adicionarComentario {
+  padding: 10px;
+  font-size: 14px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#adicionarComentario:hover {
+  background-color: #e65c00;
+}
+
+/* Estilo para o contêiner de comentários */
+#comentariosLista {
+  max-height: 300px; /* Define uma altura máxima para o contêiner de comentários */
+  overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Ajuste para o item de comentário */
+.comentario-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Estilo para a imagem e nome do usuário */
+.comentario-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.comentario-imagem {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.comentario-nome {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilo para o texto do comentário */
+.comentario-texto {
+  margin-top: 5px;
+  color: #555;
+}
+
+/* Estilo para a seção de filtros */
+.filtros-itens-venda {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filtro-item-venda {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.filtro-item-venda.selecionado {
+  border: 2px solid #ff6600;
+  border-radius: 5px;
+  transform: scale(1.1);
+}

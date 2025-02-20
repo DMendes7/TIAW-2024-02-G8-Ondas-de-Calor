@@ -1,0 +1,123 @@
+/* Estilo geral do corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ffcc00, #ff9900, #ff6600, #ff3300);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden; /* Evita a barra de rolagem horizontal */
+}
+
+/* Estilo do cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(255, 204, 0, 0);
+    padding: 10px 20px;
+    box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+/* Estilo da seção esquerda do cabeçalho */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo da logo pequena no cabeçalho */
+.header-left .logo-pequena {
+    height: 40px; /* Tamanho da logo pequena */
+    margin-right: 10px;
+}
+
+/* Estilo do título no cabeçalho */
+.header-left h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+/* Estilo dos links no cabeçalho */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right a {
+    margin-left: 10px; /* Reduz o espaçamento entre os links */
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.header-right a:hover {
+    color: #ff3300;
+}
+
+/* Estilo do conteúdo principal */
+main {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Estilo do título "Sobre nós" e "Quem Somos" */
+main h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Estilo da seção "Sobre nós" e "Quem Somos" */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* Estilo da imagem "Sobre nós" e "Quem Somos" */
+.about-image {
+    width: 45%; /* Aumenta o tamanho da imagem */
+    max-width: 350px; /* Aumenta o tamanho máximo da imagem */
+    margin: 0 20px;
+    border-radius: 15px; /* Adiciona bordas arredondadas */
+}
+
+/* Estilo do texto "Sobre nós" e "Quem Somos" */
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+/* Estilo da linha divisória */
+.divisoria {
+    width: 100%;
+    height: 2px;
+    background-color: #000; /* Cor da linha divisória */
+    margin-top: 20px; /* Espaçamento superior */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Estilo para inverter a ordem dos elementos */
+.about-section.reverse {
+    flex-direction: row-reverse;
+    text-align: right; /* Alinha o texto à direita */
+}
+
+.team-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team-image {
+    width: 50%;
+    max-width: 200px;
+    margin: 20px;
+    border-radius: 15px
+}

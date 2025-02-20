@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heat Watch</title>
+    <link rel="stylesheet" href="telainicial.css">
+    <link rel="icon" href="img/logo_png.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9mdk5s0mN3l-wY2Xgfl5990m-u_xwS4s&libraries=places&callback=initMap" async defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="img/logo_png.png" alt="Logo pequena" class="logo-pequena">
+            <h1>Heat Watch</h1>
+        </div>
+        <nav class="header-right">
+            <a href="/codigo/telainicial/telainicial.html">Início</a>
+            <a href="/codigo/quemsomos/quemsomos.html">Quem somos</a>
+            <a href="/codigo/Login/index.html" id="loginLink">Login</a>
+            <a href="/codigo/telaajuda/telaajuda.html">Ajuda</a>
+            <a href="/codigo/vendedores/listagem.html">Vendedores</a>
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Pesquisar localização">
+                <div id="suggestions"></div>
+                <button type="submit">Pesquisar</button>
+            </form>
+            <strong></strong>
+            <div id="user-section"></div>
+        </nav>
+    </header>
+    <div class="container">
+        <img src="img/logo_nomeUP.png" alt="Logo Heat Watch" class="logo-central">
+        <div class="content">
+            <div class="left-panel panel-background">
+                <div id="forecast">
+                    <p>Temperatura Máxima: <span id="temp-max"></span>°C</p>
+                    <p>Temperatura Mínima: <span id="temp-min"></span>°C</p>
+                </div>
+                <div id="wind">
+                    <p>Velocidade do Vento: <span id="wind-speed"></span> m/s</p>
+                    <p>Direção do Vento:</p>
+                    <img id="wind-direction" alt="Direção do Vento" class="wind-icon">
+                </div>
+                <div id="alerts">
+                    <p>Alertas: <span id="heat-alerts"></span></p>
+                </div>
+            </div>
+            <div class="center-panel panel-background">
+                <div id="location"></div>
+                <div id="weather">
+                    <p>Carregando...</p>
+                </div>
+                <div id="weather-icon">
+                    <img id="weather-icon-img" alt="Ícone do Tempo">
+                </div>
+                <div id="map" class="map-container"></div>
+                <form id="category-form">
+                    <select id="category-select">
+                        <option value="restaurant">Restaurantes</option>
+                        <option value="park">Parques</option>
+                        <option value="gym">Academias</option>
+                        <option value="store">Lojas</option>
+                        <option value="hospital">Hospitais</option>
+                    </select>
+                    <button type="submit">Pesquisar</button>
+                </form>
+            </div>
+            <div class="right-panel panel-background">
+                <canvas id="tempChart" width="400" height="200"></canvas>
+                <!-- Índice UV e Qualidade do Ar abaixo do gráfico -->
+                <div id="uv-index">
+                    <p>Índice UV: <span id="uv"></span></p>
+                </div>
+                <div id="air-quality">
+                    <p>Qualidade do Ar: <span id="air-quality-index"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+            const loginLink = document.getElementById('loginLink');
+            const profileImage = document.createElement('img');
+
+            if (usuarioLogado) {
+                loginLink.style.display = 'none';
+                profileImage.src = usuarioLogado.profileImage || '/telausuario/img/user-img/user-img.png';
+                profileImage.alt = 'Imagem do Usuário';
+                profileImage.className = 'profile-image';
+
+                profileImage.addEventListener('click', () => {
+                    window.location.href = '/codigo/telausuario/telausuario.html';
+                });
+
+                const headerRight = document.querySelector('.header-right');
+                headerRight.appendChild(profileImage);
+            }
+        });
+    </script>
+    <script src="telainicial.js"></script>
+</body>
+</html>

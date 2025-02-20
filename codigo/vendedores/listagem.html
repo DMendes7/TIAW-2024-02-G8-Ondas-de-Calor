@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Vendedores - Heat Watch</title>
+    <link rel="icon" href="Imagem/logo_png.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9mdk5s0mN3l-wY2Xgfl5990m-u_xwS4s&libraries=places"></script>
+    <script src="pesquisa/main.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <img
+          src="Imagem/logo_png.png"
+          alt="Logo pequena"
+          class="logo-pequena"
+        />
+        <h1>Heat Watch</h1>
+      </div>
+      <nav class="header-right">
+        <a href="/codigo/telainicial/telainicial.html">Início</a>
+        <a href="/codigo/quemsomos/quemsomos.html">Quem somos</a>
+        <a href="/codigo/Login/index.html" id="loginLink">Login</a>
+        <a href="/codigo/vendedores/cadastro.html">Cadastro de vendedores</a>
+        <a href="/codigo/vendedores/listagem.html">Listagem de vendedores</a>
+      </nav>
+    </header>
+    <div class="container">
+      <h2>Catálogo de Vendedores</h2>
+
+      <!-- Filtros de itens de venda -->
+      <div class="filtros-itens-venda">
+        <img
+          src="Imagem/agua.png"
+          alt="Água"
+          class="filtro-item-venda"
+          data-value="Água"
+        />
+        <img
+          src="Imagem/agua-coco.png"
+          alt="Água de Coco"
+          class="filtro-item-venda"
+          data-value="Água de Coco"
+        />
+        <img
+          src="Imagem/picole.png"
+          alt="Picolé"
+          class="filtro-item-venda"
+          data-value="Picolé"
+        />
+      </div>
+
+      <div class="retangulo">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Telefone</th>
+              <th>Localização</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="vendedoresTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Contêiner para exibir detalhes do vendedor -->
+    <div class="container-modal" id="container-modal" style="display:none;">
+      <div
+        id="vendedorDetalhes"
+        class="detalhes-container"
+      >
+        <div class="left">
+          <h3>Detalhes do Vendedor</h3>
+          <p id="detalhesNome"></p>
+          <p id="detalhesEmail"></p>
+          <p id="detalhesTelefone"></p>
+          <p id="detalhesLocalizacao"></p>
+
+          <!-- Contêiner de comentários -->
+          <div id="comentariosContainer">
+            <h4>Comentários</h4>
+            <div id="comentariosLista"></div>
+            <button id="adicionarComentario">Adicionar Comentário</button>
+
+            <!-- Contêiner para adicionar novo comentário -->
+            <div id="novoComentarioContainer" style="display: none">
+              <textarea
+                id="novoComentario"
+                placeholder="Escreva seu comentário aqui..."
+              ></textarea>
+              <div class="comentario-buttons">
+                <button id="salvarComentario">Salvar Comentário</button>
+                <button id="cancelarComentario">Cancelar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="map"></div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            console.log("oi");
+            const lat = 37.7749; // Example latitude
+            const lon = -122.4194; // Example longitude
+            const mapElementId = "map";
+            const mapFunctions = renderGoogleMap(lat, lon, mapElementId);
+
+            // Example usage of searchCategory function
+            // mapFunctions.searchCategory('restaurant');
+          });
+        </script>
+
+        <!-- Botão fechar -->
+        <button id="fecharDetalhes">Fechar</button>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

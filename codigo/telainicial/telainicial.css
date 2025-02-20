@@ -1,0 +1,272 @@
+/* Estilo geral do corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ffcc00, #ff9900, #ff6600, #ff3300, #ff3300);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Estilo do cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(255, 204, 0, 0);
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+/* Estilo da seção esquerda do cabeçalho */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo da logo pequena no cabeçalho */
+.header-left .logo-pequena {
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* Estilo do título no cabeçalho */
+.header-left h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+/* Estilo dos links no cabeçalho */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.header-right a:hover {
+    color: #ff3300;
+}
+
+/* Estilo do formulário de pesquisa no cabeçalho */
+#search-form {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    position: relative;
+    font-family: Arial, sans-serif;
+}
+
+#search-input {
+    padding: 5px;
+    font-size: 1em;
+    border: 2px solid #000;
+    background: none;
+    color: #000;
+}
+
+#search-form button {
+    padding: 5px 10px;
+    font-size: 1em;
+    margin-left: 5px;
+    cursor: pointer;
+    border: 2px solid #000;
+    background: none;
+    color: #000;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+#search-form button:hover {
+    background: #ff3300;
+    color: #fff;
+}
+
+/* Estilo das sugestões de pesquisa */
+#suggestions {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background: #fff;
+    border: 2px solid #000;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+#suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#suggestions div:hover {
+    background: #f0f0f0;
+}
+
+/* Estilo do container principal */
+.container {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    width: 80%;
+}
+
+/* Estilo da logo central */
+.logo-central {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+/* Estilo do conteúdo principal */
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Estilo dos painéis esquerdo, central e direito */
+.left-panel, .center-panel, .right-panel {
+    flex: 1;
+    margin: 10px;
+    min-width: 250px;
+}
+
+.center-panel {
+    text-align: center;
+}
+
+/* Estilo das informações climáticas */
+#weather {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#forecast, #wind, #alerts, #uv-index, #air-quality {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#location {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+/* Estilo do ícone do vento */
+.wind-icon {
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estilo do ícone do clima */
+#weather-icon {
+    margin-top: 10px;
+}
+
+#weather-icon-img {
+    width: 100px;
+    height: 100px;
+}
+
+/* Fundo branco nas informações */
+.panel-background {
+    /*background-color: #ffffff; /* Fundo branco */
+    padding: 15px; /* Espaço interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    margin-bottom: 10px; /* Espaço entre os elementos */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .left-panel, .center-panel, .right-panel {
+        min-width: 100%;
+        margin: 10px 0;
+    }
+}
+
+.map-container {
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .map-container {
+        height: 250px;
+    }
+}
+
+#category-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#category-select {
+    background-color: transparent;
+    color: beige;
+    font-size: 1.2em;
+    padding: 10px;
+    border: 2px solid beige;
+    border-radius: 5px;
+    width: 50%;
+    max-width: 600px;
+    outline: none;
+}
+
+#category-select option {
+    color: black;
+}
+
+#category-form button {
+    background-color: beige;
+    color: black;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#category-form button:hover {
+    background-color: #f0e68c;
+}
+
+#user-section img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+}

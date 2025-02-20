@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de vendedores - Heat Watch</title>
+    <link rel="icon" href="Imagem/logo_png.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9mdk5s0mN3l-wY2Xgfl5990m-u_xwS4s&libraries=places"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header>
+      <div class="header-left">
+        <img
+          src="Imagem/logo_png.png"
+          alt="Logo pequena"
+          class="logo-pequena"
+        />
+        <h1>Heat Watch</h1>
+      </div>
+      <nav class="header-right">
+        <a href="/codigo/telainicial/telainicial.html">Início</a>
+        <a href="/codigo/quemsomos/quemsomos.html">Quem somos</a>
+        <a href="/codigo/Login/index.html" id="loginLink">Login</a>
+        <a href="/codigo/telaajuda/telaajuda.html">Ajuda</a>
+        <a href="/codigo/vendedores/cadastro.html">Cadastro de Vendedores</a>
+        <a href="/codigo/vendedores/listagem.html">Listagem de vendedores</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="left-side">
+        <input
+          type="text"
+          name="search"
+          value=""
+          placeholder="🔎 Pesquise um vendedor..."
+        />
+        <div class="search-results">
+          <div class="result">💰 Vendedor De agua</div>
+          <div class="result">💰 Vendedor De agua</div>
+          <div class="result">💰 Vendedor De agua</div>
+          <div class="result">💰 Vendedor De agua</div>
+        </div>
+      </div>  
+      <div class="right-side">
+        <div id="map" style="height: 500px; width: 100%"></div>
+        <div id="details">
+          <h2>Detalhes do vendedor</h2>
+          <div>
+            <p>Nome: <span>Vendedor de água<span></p>
+            <p>Endereço: <span>Rua dos Bobos, 0</span></p>
+            <p>Telefone: <span>(11) 99999-9999</span></p>
+          </div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            console.log("oi");
+            const lat = 37.7749; // Example latitude
+            const lon = -122.4194; // Example longitude
+            const mapElementId = "map";
+            const mapFunctions = renderGoogleMap(lat, lon, mapElementId);
+
+            // Example usage of searchCategory function
+            // mapFunctions.searchCategory('restaurant');
+          });
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

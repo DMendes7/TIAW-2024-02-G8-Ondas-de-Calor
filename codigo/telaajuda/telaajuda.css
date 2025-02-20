@@ -1,0 +1,95 @@
+/* Estilo geral do corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ffcc00, #ff9900, #ff6600, #ff3300);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden; /* Evita a barra de rolagem horizontal */
+}
+
+/* Estilo do cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(255, 204, 0, 0);
+    padding: 10px 20px;
+    box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+/* Estilo da seção esquerda do cabeçalho */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo da logo pequena no cabeçalho */
+.header-left .logo-pequena {
+    height: 40px; /* Tamanho da logo pequena */
+    margin-right: 10px;
+}
+
+/* Estilo do título no cabeçalho */
+.header-left h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+/* Estilo dos links no cabeçalho */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right a {
+    margin-left: 10px; /* Reduz o espaçamento entre os links */
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.header-right a:hover {
+    color: #ff3300;
+}
+
+/* Estilo das seções de ajuda */
+main {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff88;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    font-size: 1.5em;
+    color: #ff3300;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Estilo para a imagem do perfil */
+.profile-image {
+    width: 40px; /* Largura da imagem */
+    height: 40px; /* Altura da imagem */
+    border-radius: 50%; /* Faz a imagem ficar redonda */
+    margin-left: 10px; /* Espaço à esquerda da imagem */
+    cursor: pointer; /* Muda o cursor para indicar que a imagem é clicável */
+}

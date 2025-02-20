@@ -1,0 +1,12 @@
+{
+  "name": "ondas-de-calor",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently \"json-server --watch codigo/db/db.json --port 3001\" \"serve -s codigo\""
+  },
+  "dependencies": {
+    "json-server": "^0.17.0",
+    "concurrently": "^7.0.0",
+    "serve": "^14.0.1"
+  }
+}

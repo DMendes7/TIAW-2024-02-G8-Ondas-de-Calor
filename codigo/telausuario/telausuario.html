@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário - Heat Watch</title>
+    <link rel="stylesheet" href="telausuario.css">
+    <link rel="icon" href="img/logo_png.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="img/logo_png.png" alt="Logo pequena" class="logo-pequena">
+            <h1>Heat Watch</h1>
+        </div>
+        <nav class="header-right">
+            <a href="/codigo/telainicial/telainicial.html">Início</a>
+            <a href="/codigo/quemsomos/quemsomos.html">Quem somos</a>
+            <a href="/codigo/telaajuda/telaajuda.html">Ajuda</a>
+            <a href="/codigo/vendedores/listagem.html">Vendedores</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo da página (perfil do usuário) -->
+    <div class="container">
+        <div class="profile-container">
+            <h1>Perfil do Usuário</h1>
+            <img id="profileImage" src="" alt="Foto de Perfil" class="profile-image">
+            <p><strong>Nome:</strong> <span id="nome"></span></p>
+            <p><strong>Sobrenome:</strong> <span id="sobrenome"></span></p>
+            <p><strong>E-mail:</strong> <span id="email"></span></p>
+
+            <button id="editProfileButton">Editar Perfil</button>
+
+            <!-- Botão de Logout -->
+            <button id="logout-button">Sair</button>
+
+            <form id="editForm" style="display: none;">
+                <h2>Editar Informações</h2>
+                <label for="editNome">Nome:</label>
+                <input type="text" id="editNome" placeholder="Novo Nome">
+                <label for="editSobrenome">Sobrenome:</label>
+                <input type="text" id="editSobrenome" placeholder="Novo Sobrenome">
+                <label for="oldSenha">Senha Antiga:</label>
+                <input type="password" id="oldSenha" placeholder="Senha Antiga">
+                <label for="newSenha">Nova Senha:</label>
+                <input type="password" id="newSenha" placeholder="Nova Senha">
+                <label for="profileImageUpload">Foto de Perfil:</label>
+                <input type="file" id="profileImageUpload" accept="image/*">
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="telausuario.js"></script>
+</body>
+</html>

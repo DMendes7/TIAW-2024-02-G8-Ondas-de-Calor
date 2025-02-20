@@ -1,0 +1,164 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ffcc00, #ff9900, #ff6600);
+    height: 100vh; /* Ocupa toda a altura da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Ajuste para exibir o header no topo e o conteúdo abaixo */
+}
+
+/* Ajuste no container para não ser sobreposto pelo cabeçalho */
+.container {
+    display: flex;
+    width: 80%; /* Largura total da tela */
+    max-width: 900px; /* Limite de largura */
+    margin-top: 100px; /* Adiciona espaço para evitar sobreposição do header */
+}
+
+.form-container {
+    width: 50%; /* Coluna da esquerda para o formulário */
+    text-align: left; /* Alinha texto à esquerda */
+    padding: 20px; /* Espaçamento interno */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para efeito 3D */
+}
+
+.logo-container {
+    width: 50%; /* Coluna da direita para a logo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container h1 {
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+.form-container label {
+    display: block; /* Cada label ocupa uma linha */
+    margin-bottom: 5px; /* Espaço abaixo do label */
+    font-weight: bold; /* Negrito */
+}
+
+.form-container input {
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 5px; /* Bordas arredondadas */
+    width: 95%; /* Largura total do campo de entrada */
+    margin-bottom: 10px; /* Espaço abaixo do campo de entrada */
+}
+
+.form-container button {
+    padding: 10px; /* Espaçamento interno do botão */
+    background-color: #ff6600; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    width: 100%; /* Largura total do botão */
+}
+
+.form-container button:hover {
+    background-color: #e65c00; /* Cor ao passar o mouse */
+}
+
+.logo-container h1 {
+    text-align: center; /* Centraliza o texto da logo */
+    color: #fff; /* Cor do texto da logo */
+}
+
+
+.signup-link {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.signup-link a {
+    color: #ff6600; /* Cor do link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    color: #e65c00; /* Cor ao passar o mouse */
+}
+
+/* Estilo do cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(255, 204, 0, 0); /* Ajuste de fundo */
+    padding: 10px 20px;
+    box-sizing: border-box; /* Inclui padding na largura total */
+    position: fixed; /* Fixa o cabeçalho no topo */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+/* Estilo da seção esquerda do cabeçalho */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo da logo pequena no cabeçalho */
+.header-left .logo-pequena {
+    height: 40px; /* Tamanho da logo pequena */
+    margin-right: 10px;
+}
+
+/* Estilo do título no cabeçalho */
+.header-left h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+/* Estilo dos links no cabeçalho */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right a {
+    margin-left: 10px; /* Reduz o espaçamento entre os links */
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.header-right a:hover {
+    color: #ff3300;
+}
+
+/* Estilo para as imagens dos itens de venda */
+.itens-venda {
+    display: flex;
+    gap: 10px; /* Espaçamento entre as imagens */
+    justify-content: center; /* Centraliza as imagens */
+}
+
+.item-venda-img {
+    width: 50px; /* Largura da imagem */
+    height: 50px; /* Altura da imagem */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    border: 2px solid transparent; /* Borda invisível por padrão */
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: border 0.3s; /* Transição suave da borda */
+}
+
+.item-venda-img.selecionado {
+    border: 2px solid #ff6600; /* Borda laranja quando selecionada */
+}
+
+

@@ -1,0 +1,155 @@
+/* Estilo geral do corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ffcc00, #ff9900, #ff6600, #ff3300);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden; /* Evita a barra de rolagem horizontal */
+}
+
+/* Estilo do cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(255, 204, 0, 0);
+    padding: 10px 20px;
+    box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+/* Estilo da seção esquerda do cabeçalho */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo da logo pequena no cabeçalho */
+.header-left .logo-pequena {
+    height: 40px; /* Tamanho da logo pequena */
+    margin-right: 10px;
+}
+
+/* Estilo do título no cabeçalho */
+.header-left h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+/* Estilo dos links no cabeçalho */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right a {
+    margin-left: 10px; /* Reduz o espaçamento entre os links */
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.header-right a:hover {
+    color: #ff3300;
+}
+
+/* Estilo do container do perfil */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.profile-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    width: 80%;
+    max-width: 600px;
+}
+
+.profile-container h1 {
+    margin-bottom: 20px;
+}
+
+.profile-container p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.profile-container h2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#editForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#editForm input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 95%;
+    margin-bottom: 10px;
+}
+
+#editForm button {
+    padding: 10px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#editForm button:hover {
+    background-color: #e65c00;
+}
+
+#editProfileButton {
+    padding: 10px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#editProfileButton:hover {
+    background-color: #e65c00;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* Estilo do botão de Logout */
+#logout-button {
+    background: none; /* Sem fundo */
+    color: #ff6600; /* Cor do texto em laranja */
+    border: none; /* Sem borda */
+    font-size: 1.2em; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 20px; /* Espaçamento acima */
+    display: block; /* Faz o botão ocupar a linha inteira */
+}
